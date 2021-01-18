@@ -1,20 +1,13 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import { useEffect } from "react";
 import { client } from "./client";
 
 export default function Home() {
   useEffect(() => {
-    // client
-    //   .getEntries()
-    //   .then((res) => console.log(res))
-    //   .catch(console.error);
     client
       .getEntries()
-      .then((response) => {
-        console.log(response);
-      })
+      .then((res) => console.log(res))
       .catch(console.error);
-  });
+  }, []);
   return (
     <div className="md:flex bg-white rounded-lg p-24 justify-center">
       <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
