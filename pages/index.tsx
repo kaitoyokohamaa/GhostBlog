@@ -3,20 +3,21 @@ import { getAllPosts } from "../lib";
 import Head from "next/head";
 import Link from "next/link";
 import { Post } from "../components/post";
+import Layout from "../components/layout/layout";
 export async function getStaticProps() {
   const posts = await getAllPosts();
   return { revalidate: 1, props: { posts } };
 }
 export default function Home({ posts }) {
   return (
-    <>
+    <Layout>
       <Head>
         {" "}
         <title>home</title>
       </Head>
       <div className="text-center">
         <div className="md:flex bg-white rounded-lg p-24 justify-center">
-          <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+          {/* <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
             <img
               className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
               src="https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
@@ -29,10 +30,11 @@ export default function Home({ posts }) {
               </div>
 
               <div className="text-blue-600">
-                <a href=" https://twitter.com/mj3PBy4ayqxfy14">Twitter</a>
+                <a href="https://twitter.com/mj3PBy4ayqxfy14">Twitter</a>
               </div>
             </div>
-          </figure>
+          </figure> */}
+          <h1 className="font-bold text-black-1000 text-3xl">Kai Blog</h1>
         </div>
         <div className="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
           <div className="mx-0 sm:mx-6">
@@ -54,6 +56,6 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
