@@ -27,7 +27,7 @@ export default function header() {
             </Link>
             <Link href="/about">
               <a
-                className="ml-4 text-xl   text-white hover:text-gray-900 sm:ml-12"
+                className="ml-4 text-xl   text-white hover:text-blue-900 sm:ml-12"
                 aria-label="aboutページに移動"
               >
                 About
