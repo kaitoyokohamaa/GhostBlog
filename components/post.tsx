@@ -1,16 +1,8 @@
 import React from "react";
 import Link from "next/link";
-export const Post = ({
-  authorImg,
-  name,
-  date,
-  coverImg,
-  text,
-  slug,
-  title,
-}) => {
+export const Post = ({ authorImg, name, date, coverImg, text, ids, title }) => {
   return (
-    <Link href="/posts/[slug]" as={`/posts/${slug}`}>
+    <Link href="/posts/[ids]" as={`/posts/${ids}`}>
       <div className="md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
         <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
           <div className="flex flex-wrap no-underline hover:no-underline">
