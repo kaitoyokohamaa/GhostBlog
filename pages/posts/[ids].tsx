@@ -1,29 +1,8 @@
-import { useRouter } from "next/router";
-
-import ErrorPage from "next/error";
 import { getPostByIds, getAllPostsWithIds } from "../../lib";
 import BlogHeader from "../../components/blogHeader";
 import BlogBody from "../../components/blogBody";
 import Layout from "../../components/layout/layout";
-// export async function getStaticPaths() {
-//   const allPosts = await getAllPostsWithIds();
-//   console.log(allPosts);
-//   return {
-//     paths: allPosts?.map(({ ids }) => `/posts/${ids}`),
-//     fallback: true,
-//   };
-// }
 
-// export async function getStaticProps({ params }) {
-//   const post = await getPostByIds(params.ids);
-
-//   return {
-//     props: {
-//       post: post && post,
-//     },
-//     revalidate: 1,
-//   };
-// }
 export async function getStaticPaths() {
   // パスの設定
   const allPosts = await getAllPostsWithIds();
@@ -54,7 +33,7 @@ const Post = ({ post }) => {
         title={post?.fields.title}
         contentImg={post?.fields.image?.fields.file.url}
       />
-      <BlogBody content={post?.fields.descriptions} />
+      <BlogBody content={post?.fields.content} />
     </Layout>
   );
 };

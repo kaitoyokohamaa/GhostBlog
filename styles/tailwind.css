@@ -1,8 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "tailwindcss/layer";
-
-.h-278 {
-  height: 278px;
+@layer utilities {
+  .h-500 {
+    height: 500px;
+  }
 }

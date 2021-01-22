@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function header() {
   return (
     <div>
-      <header className="p-3 z-10 border-b border-black-200 bg-black sticky top-0">
+      <header className="p-3 z-10 border-b border-black-200 bg-black w-full top-0 fixed mb-2">
         <div className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="md:flex items-center">
             <Link href="/">

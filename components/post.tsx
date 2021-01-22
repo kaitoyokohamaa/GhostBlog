@@ -1,6 +1,14 @@
 import React from "react";
 import Link from "next/link";
-export const Post = ({ authorImg, name, date, coverImg, text, ids, title }) => {
+export const Post = ({
+  authorImg,
+  name,
+  date,
+  coverImg,
+  subtitle,
+  ids,
+  title,
+}) => {
   return (
     <Link href="/posts/[ids]" as={`/posts/${ids}`}>
       <div className="md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
@@ -10,7 +18,9 @@ export const Post = ({ authorImg, name, date, coverImg, text, ids, title }) => {
 
             <div className=" font-bold text-xl text-gray-900 px-6">{title}</div>
             <p className="text-gray-800 font-serif text-base px-6 mb-5">
-              {text.length > 170 ? text.substr(0, 170) + "..." : text}
+              {subtitle.length > 170
+                ? subtitle.substr(0, 100) + "..."
+                : subtitle}
             </p>
           </div>
         </div>
