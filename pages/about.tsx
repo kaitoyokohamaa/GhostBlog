@@ -9,7 +9,7 @@ export default function About() {
         {" "}
         <title>about</title>
       </Head>
-      <div className="text-center">
+      <div className="mt-14 text-center">
         <div className="md:flex bg-white rounded-lg p-24 justify-center">
           <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
             <img
@@ -35,6 +35,17 @@ export default function About() {
               </div>
             </div>
           </figure>
+        </div>
+        <div className="mb-10">
+          <h2>経歴</h2>
+          <p>株式会社Permil</p>
+          <p>1年間営業を担当</p>
+          <p>KredoJapan</p>
+          <p>Webマーケを担当</p>
+          <p>株式会社Ailab</p>
+          <p>フロントエンドエンジニアとして開発</p>
+          <p>Onebox株式会社</p>
+          <p>フロントエンドエンジニアとして開発</p>
         </div>
       </div>
     </Layout>

@@ -10,7 +10,11 @@ export default function BlogBody({ content }) {
           <img
             src={url}
             alt={fileName}
-            style={{ height: "auto", width: "100%", margin: "2em 0" }}
+            style={{
+              width: "100%",
+              margin: "2em 0",
+              height: "500px",
+            }}
           />
         );
       },
@@ -18,9 +22,20 @@ export default function BlogBody({ content }) {
         const { uri } = node.data;
         const { value } = node.content[0];
         return (
-          <a target="_blank" rel="noreferrer noopener" href={uri}>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={uri}
+            style={{ color: "blue" }}
+          >
             {value}
           </a>
+        );
+      },
+      [BLOCKS.HEADING_1]: (node) => {
+        const { value } = node.content[0];
+        return (
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "0" }}>{value}</h2>
         );
       },
     },

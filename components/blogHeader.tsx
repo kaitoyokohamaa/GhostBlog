@@ -1,10 +1,11 @@
 import React from "react";
-
+import Date from "../components/date";
 export default function BlogHeader({
   authorName,
   authorImg,
   contentImg,
   title,
+  date,
 }) {
   return (
     <div>
@@ -19,10 +20,10 @@ export default function BlogHeader({
               src={authorImg}
             />
           </div>
-          {/* <p> {authorName}</p> */}
-          <div>
-            <p className="text-gray-600 text-xs md:text-sm">海斗</p>{" "}
-            <p className="text-gray-600 text-xs md:text-sm">2019/9</p>
+
+          <div className="pt-2">
+            <p className="text-gray-600 text-xs md:text-sm">{authorName}</p>{" "}
+            <Date dateString={date} />
           </div>
         </div>
       </div>

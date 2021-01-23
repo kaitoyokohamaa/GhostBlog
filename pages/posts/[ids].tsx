@@ -28,10 +28,11 @@ const Post = ({ post }) => {
   return (
     <Layout>
       <BlogHeader
-        authorName={post?.fields.author?.fields?.name}
-        authorImg={post?.fields.image.fields.file.url}
+        authorName={post?.fields.authorImg?.fields?.title}
+        authorImg={post?.fields.authorImg?.fields?.file?.url}
         title={post?.fields.title}
         contentImg={post?.fields.image?.fields.file.url}
+        date={post?.fields.opendAt}
       />
       <BlogBody content={post?.fields.content} />
     </Layout>
