@@ -1,14 +1,18 @@
-import Head from "next/head";
-
 import Layout from "../components/layout/layout";
-
+import Head from "../components/head";
 export default function About() {
   return (
     <Layout>
-      <Head>
-        {" "}
-        <title>about</title>
-      </Head>
+      <Head
+        title={"アバウトページ"}
+        description={
+          "こちらは横浜海斗のアバウトページです。これまでの経歴を掲載しています。"
+        }
+        keyword={"about"}
+        image={
+          "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
+        }
+      />
       <div className="mt-14 text-center">
         <div className="md:flex bg-white rounded-lg p-24 justify-center">
           <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">

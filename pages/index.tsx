@@ -1,7 +1,7 @@
-import { useEffect, Fragment } from "react";
+import { Fragment } from "react";
 import { getAllPosts } from "../lib";
-import Head from "next/head";
-import Link from "next/link";
+import Head from "../components/head";
+
 import { Post } from "../components/post";
 import Layout from "../components/layout/layout";
 export async function getStaticProps() {
@@ -11,10 +11,17 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <Layout>
-      <Head>
-        {" "}
-        <title>home</title>
-      </Head>
+      <Head
+        title={"ブログ記事"}
+        description={
+          "こちらは横浜海斗のブログ記事一覧です。日頃の気づきや技術のアウトプットをつぶやいて行きます。"
+        }
+        keyword={"ブログ"}
+        image={
+          "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
+        }
+      />
+
       <div className="text-center">
         <div className="md:flex bg-white rounded-lg p-24 justify-center">
           <h1 className="font-bold text-black-1000 text-3xl">Kai Blog</h1>
