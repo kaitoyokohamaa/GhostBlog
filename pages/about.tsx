@@ -9,7 +9,7 @@ export default function About() {
         description={
           "こちらは横浜海斗のアバウトページです。これまでの経歴を掲載しています。"
         }
-        keyword={"about"}
+        keyword="about"
         image={
           "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
         }
