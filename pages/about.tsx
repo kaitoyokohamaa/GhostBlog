@@ -1,5 +1,6 @@
 import Layout from "../components/layout/layout";
 import Head from "../components/head";
+import ReactIcon from "../public/react.svg";
 export default function About() {
   return (
     <Layout>
@@ -21,8 +22,8 @@ export default function About() {
               src="https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
             />
             <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
-              <h2 className="font-bold ">kaikai</h2>
-              <div className="text-purple-500">I'm University student</div>
+              <h2 className="font-bold ">Kaito Yokohama</h2>
+              <div className="text-purple-500">I'm University Student</div>
               <div className="flex  items-center justify-center px-4 py-4 sm:px-6 lg:px-8">
                 <a href="https://github.com/kaitoyokohamaa">
                   <img
@@ -39,6 +40,25 @@ export default function About() {
               </div>
             </div>
           </figure>
+        </div>
+        <div className="mb-10">
+          <div className="flex justify-center">
+            <img
+              className="w-10 h-10"
+              src="https://user-images.githubusercontent.com/55383786/105624318-368ec980-5e64-11eb-8868-a50c074b464b.png"
+            />
+            <h2 className="font-bold py-2 pl-2 text-xl">Skill</h2>
+          </div>
+          <div>
+            <p>株式会社Permil</p>
+            <p>1年間営業を担当</p>
+            <p>KredoJapan</p>
+            <p>Webマーケを担当</p>
+            <p>株式会社Ailab</p>
+            <p>フロントエンドエンジニアとして開発</p>
+            <p>Onebox株式会社</p>
+            <p>フロントエンドエンジニアとして開発</p>
+          </div>
         </div>
         <div className="mb-10">
           <h2>経歴</h2>
