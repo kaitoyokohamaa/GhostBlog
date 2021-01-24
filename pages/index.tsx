@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, Fragment } from "react";
 import { getAllPosts } from "../lib";
 import Head from "next/head";
 import Link from "next/link";
@@ -24,14 +24,16 @@ export default function Home({ posts }) {
             <div className="flex flex-wrap justify-between pt-12 -mx-6">
               {posts?.map(({ fields }) => {
                 return (
-                  <Post
-                    title={fields.title}
-                    subtitle={fields?.subtitle}
-                    authorImg={fields.authorImg?.fields?.file?.url}
-                    ids={fields.ids}
-                    date={fields.opendAt}
-                    coverImg={fields.image?.fields?.file?.url}
-                  />
+                  <Fragment key={fields.ids}>
+                    <Post
+                      title={fields.title}
+                      subtitle={fields?.subtitle}
+                      authorImg={fields.authorImg?.fields?.file?.url}
+                      ids={fields.ids}
+                      date={fields.opendAt}
+                      coverImg={fields.image?.fields?.file?.url}
+                    />
+                  </Fragment>
                 );
               })}
             </div>
