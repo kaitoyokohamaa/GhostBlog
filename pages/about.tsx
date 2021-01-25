@@ -1,6 +1,11 @@
 import Layout from "../components/layout/layout";
 import Head from "../components/head";
+import JavaScriptIcon from "../public/javascript.svg";
 import ReactIcon from "../public/react.svg";
+import TypeScriptIcon from "../public/typescript.svg";
+import GraphQLIcon from "../public/graphql.svg";
+import Comment from "../public/comment.svg";
+import Ryuusei from "../public/kai.jpg";
 export default function About() {
   return (
     <Layout>
@@ -14,8 +19,12 @@ export default function About() {
           "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
         }
       />
-      <div className="mt-14 text-center">
-        <div className="md:flex bg-white rounded-lg p-24 justify-center">
+
+      <div className="mt-14 pt-24 text-center ">
+        <h2 className="font-bold py-6 pl-2 text-xl">
+          生きる伝説横浜海斗のご紹介
+        </h2>
+        <div className="md:flex bg-white rounded-lg pb-24 justify-center">
           <figure className="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
             <img
               className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
@@ -41,35 +50,69 @@ export default function About() {
             </div>
           </figure>
         </div>
-        <div className="mb-10">
-          <div className="flex justify-center">
+        <div className="mb-10 m-auto md:w-2/3">
+          <div className="flex justify-center border-b-8 py-10 mx-20">
             <img
               className="w-10 h-10"
               src="https://user-images.githubusercontent.com/55383786/105624318-368ec980-5e64-11eb-8868-a50c074b464b.png"
             />
-            <h2 className="font-bold py-2 pl-2 text-xl">Skill</h2>
+            <h2 className="font-bold py-2 pl-2 text-xl">スキル</h2>
           </div>
-          <div>
-            <p>株式会社Permil</p>
-            <p>1年間営業を担当</p>
-            <p>KredoJapan</p>
-            <p>Webマーケを担当</p>
-            <p>株式会社Ailab</p>
-            <p>フロントエンドエンジニアとして開発</p>
-            <p>Onebox株式会社</p>
-            <p>フロントエンドエンジニアとして開発</p>
+          <div className="pt-10 flex justify-center">
+            <JavaScriptIcon />
+            <ReactIcon />
+            <TypeScriptIcon />
+            <GraphQLIcon />
           </div>
         </div>
-        <div className="mb-10">
-          <h2>経歴</h2>
-          <p>株式会社Permil</p>
-          <p>1年間営業を担当</p>
-          <p>KredoJapan</p>
-          <p>Webマーケを担当</p>
-          <p>株式会社Ailab</p>
-          <p>フロントエンドエンジニアとして開発</p>
-          <p>Onebox株式会社</p>
-          <p>フロントエンドエンジニアとして開発</p>
+        <div className="mb-10 m-auto md:w-2/3">
+          <div className="flex  border-b-8 py-10 mx-20 justify-center">
+            <Comment className="w-10 h-10" />
+            <h2 className="font-bold py-2 pl-2 text-xl">推薦コメント</h2>
+          </div>
+          <div className="md:m-auto sm:w-full">
+            <div className="pt-10 flex md:w-2/4  md:m-auto sm:m-0">
+              <img
+                className="w-48 h-48 md:h-auto md:rounded rounded-full "
+                src="https://user-images.githubusercontent.com/55383786/105632207-54285700-5e95-11eb-9203-bb010091695b.jpg"
+              />
+              <div className="p-4  md: w-2/3 sm:w-full">
+                <h2 className="font-bold md:p-8">ジョビンソン</h2>
+                <blockquote>
+                  <p className="text-center font-sans">
+                    「横浜のアニキとに手を出したら<br></br>
+                    どうなるか分かってるのか？」
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+            <div className="pt-10 flex flex-row-reverse md:w-2/4 md:m-auto">
+              <img
+                className="w-48 h-48 md:h-auto md:rounded rounded-full "
+                src=" https://user-images.githubusercontent.com/55383786/105650743-114b9b00-5ef8-11eb-9451-dffd61501d42.jpg"
+              />
+              <div className="p-4  md: w-2/3 sm:w-full">
+                <h2 className="font-bold md:p-8">アーナルネッガ</h2>
+                <p className="text-center font-sans">
+                  「待ってろぉ〜横浜ぁぁ！！」
+                </p>
+              </div>
+            </div>
+            <div className="pt-10 flex md:w-2/4 m-auto">
+              <img
+                className="w-48 h-48 md:h-auto md:rounded rounded-full "
+                src="https://user-images.githubusercontent.com/55383786/105647973-62ee2880-5eec-11eb-9119-d083380b92bd.jpg"
+              />
+              <div className="sp-4 md:w-2/3">
+                <h2 className="font-bold md:p-8">横浜流星</h2>
+                <blockquote>
+                  <p className="text-center font-sans">
+                    「あぁ弟のことか？<br></br>あいつには敵わねぇよ」
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
