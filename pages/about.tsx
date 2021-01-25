@@ -80,7 +80,7 @@ export default function About() {
                 <h2 className="font-bold md:p-8">ジョビンソン</h2>
                 <blockquote>
                   <p className="text-center font-sans">
-                    「横浜のアニキとに手を出したら<br></br>
+                    「横浜のアニキに手を出したら<br></br>
                     どうなるか分かってるのか？」
                   </p>
                 </blockquote>
