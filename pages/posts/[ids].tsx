@@ -6,17 +6,15 @@ import Head from "../../components/head";
 export async function getStaticPaths() {
   // パスの設定
   const allPosts = await getAllPostsWithIds();
-
   return {
     paths: allPosts?.map(({ ids }) => `/posts/${ids}`),
-    // See the "paths" section below
-    fallback: false, // See the "fallback" section below
+    fallback: false,
   };
 }
-export async function getStaticProps({ params }) {
-  // データの取得
-  const post = await getPostByIds(params?.ids);
 
+export async function getStaticProps({ params }) {
+  const post = await getPostByIds(params?.ids);
+  console.log(post);
   return {
     props: {
       post,
@@ -25,6 +23,7 @@ export async function getStaticProps({ params }) {
   };
 }
 const Post = ({ post }) => {
+  console.log(post);
   return (
     <Layout>
       <Head
