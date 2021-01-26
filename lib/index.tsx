@@ -16,18 +16,20 @@ export const getAllPosts = async () => {
   console.log(`Error getting .`);
 };
 //idの獲得
-export async function getPostByIds(ids) {
+export async function getPostByIds(ids: string) {
   const entries = await client.getEntries({
     content_type: "post",
     limit: 1,
     "fields.ids[in]": ids,
   });
+
   if (entries.items) {
     return entries.items[0];
   }
 }
 
 function parsePostIds({ fields }) {
+  console.log(fields.ids);
   return {
     ids: fields.ids,
   };

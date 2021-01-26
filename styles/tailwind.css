@@ -5,4 +5,7 @@
   .h-500 {
     height: 500px;
   }
+  .italic {
+    font-style: italic;
+  }
 }
