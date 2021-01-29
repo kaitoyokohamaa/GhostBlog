@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPostByIds(params?.ids);
-  console.log(post);
+
   return {
     props: {
       post,
@@ -23,7 +23,6 @@ export async function getStaticProps({ params }) {
   };
 }
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <Layout>
       <Head
@@ -33,6 +32,7 @@ const Post = ({ post }) => {
         image={
           "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
         }
+        lang="ja"
       />
       <BlogHeader
         authorName={post?.fields.authorImg?.fields?.title}

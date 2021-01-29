@@ -18,6 +18,7 @@ export default function BlogHeader({
             <img
               className="w-14 h-14 rounded-full mr-4 avatar"
               src={authorImg}
+              alt={authorName}
             />
           </div>
 

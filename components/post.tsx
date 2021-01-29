@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Date from "../components/date";
+
 export const Post = ({ authorImg, date, coverImg, subtitle, ids, title }) => {
   return (
     <Link href="/posts/[ids]" as={`/posts/${ids}`}>
