@@ -29,7 +29,6 @@ export async function getPostByIds(ids: string) {
 }
 
 function parsePostIds({ fields }) {
-  console.log(fields.ids);
   return {
     ids: fields.ids,
   };

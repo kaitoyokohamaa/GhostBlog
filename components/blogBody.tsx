@@ -2,7 +2,6 @@ import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 export default function BlogBody({ content }) {
-  console.log(content);
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
