@@ -1,8 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import Date from "../components/date";
-
-export const Post = ({ authorImg, date, coverImg, subtitle, ids, title }) => {
+type Props = {
+  authorImg: string;
+  date: Date;
+  coverImg: string;
+  subtitle: string;
+  ids: number;
+  title: string;
+};
+export const Post = ({
+  authorImg,
+  date,
+  coverImg,
+  subtitle,
+  ids,
+  title,
+}: Props) => {
   return (
     <Link href="/posts/[ids]" as={`/posts/${ids}`}>
       <div className="md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
