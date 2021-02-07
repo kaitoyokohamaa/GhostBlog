@@ -1,12 +1,20 @@
 import React from "react";
 import Date from "../components/date";
+
+type Props = {
+  authorImg: string;
+  date: Date;
+  authorName: string;
+  contentImg: string;
+  title: string;
+};
 export default function BlogHeader({
   authorName,
   authorImg,
   contentImg,
   title,
   date,
-}) {
+}: Props) {
   return (
     <div>
       <div>
@@ -18,6 +26,7 @@ export default function BlogHeader({
             <img
               className="w-14 h-14 rounded-full mr-4 avatar"
               src={authorImg}
+              alt={authorName}
             />
           </div>
 
