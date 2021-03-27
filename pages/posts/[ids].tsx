@@ -1,27 +1,22 @@
-import { getPostByIds, getAllPostsWithIds } from "../../lib";
 import BlogHeader from "../../components/blogHeader";
 import BlogBody from "../../components/blogBody";
 import Layout from "../../components/layout/layout";
 import Head from "../../components/head";
-export async function getStaticPaths() {
-  // パスの設定
-  const allPosts = await getAllPostsWithIds();
-  return {
-    paths: allPosts?.map(({ ids }) => `/posts/${ids}`),
-    fallback: false,
-  };
-}
+import { getPage } from "../../lib";
 
-export async function getStaticProps({ params }) {
-  const post = await getPostByIds(params?.ids);
-
+export async function getStaticProps() {
+  const page = await getPage({
+    pageContentType: "page_help_center_article",
+    slug: "introduction-to-contentful",
+    locale: "de-DE",
+  });
   return {
     props: {
-      post,
+      post: page,
     },
-    revalidate: 1,
   };
 }
+
 const Post = ({ post }) => {
   return (
     <Layout>

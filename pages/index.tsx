@@ -1,13 +1,18 @@
 import { Fragment } from "react";
-import { getAllPosts } from "../lib";
+// import { getAllPosts } from "../lib";
 import Head from "../components/head";
 
 import { Post } from "../components/post";
 import Layout from "../components/layout/layout";
-export async function getStaticProps() {
-  const posts = await getAllPosts();
-  return { revalidate: 1, props: { posts } };
-}
+// import { getPage } from "../lib";
+// export async function getStaticProps() {
+//   const page = await getPage({
+//     pageContentType: "page_help_center_article",
+//     slug: "introduction-to-contentful",
+//     locale: "de-DE",
+//   });
+//   console.log(page);
+// }
 export default function Home({ posts }) {
   return (
     <Layout>

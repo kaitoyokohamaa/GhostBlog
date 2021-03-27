@@ -14,11 +14,9 @@ const HeadConfigurations = ({
   description,
   keyword,
   image,
-  lang,
 }: Props): JSX.Element => {
   return (
     <>
-      <html lang={lang} />
       <Head>
         <title>{title}</title>
 
