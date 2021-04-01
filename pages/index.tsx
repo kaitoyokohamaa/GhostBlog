@@ -1,18 +1,30 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 // import { getAllPosts } from "../lib";
 import Head from "../components/head";
 
 import { Post } from "../components/post";
 import Layout from "../components/layout/layout";
-// import { getPage } from "../lib";
-// export async function getStaticProps() {
-//   const page = await getPage({
-//     pageContentType: "page_help_center_article",
-//     slug: "introduction-to-contentful",
-//     locale: "de-DE",
-//   });
-//   console.log(page);
-// }
+
+export async function getStaticProps() {
+  const client = require("contentful").createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  async function fetchEntries() {
+    const entries = await client.getEntries({ content_type: "post" });
+    return entries.items;
+  }
+
+  const res = await fetchEntries();
+  const posts = await res;
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
 export default function Home({ posts }) {
   return (
     <Layout>
