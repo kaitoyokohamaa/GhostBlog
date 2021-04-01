@@ -4,9 +4,8 @@ import Layout from "../../components/layout/layout";
 import Head from "../../components/head";
 
 export async function getStaticPaths() {
-  const performance = "performance";
   return {
-    paths: [{ params: { id: performance.toString() } }],
+    paths: [{ params: { slug: "introduction" } }],
     fallback: false,
   };
 }
@@ -19,7 +18,7 @@ export async function getStaticProps({ params }) {
 
   async function fetchEntries() {
     const entries = await client.getEntries({ content_type: "post" });
-    return entries.items[0];
+    return entries.items[1];
   }
 
   const res = await fetchEntries();
