@@ -6,7 +6,7 @@ export default function BlogBody({ content }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { url, fileName } = node.data.target.fields.file;
-        return <img src={url} alt={fileName} />;
+        return <img className="" src={url} alt={fileName} />;
       },
       [INLINES.HYPERLINK]: (node) => {
         const { uri } = node.data;
