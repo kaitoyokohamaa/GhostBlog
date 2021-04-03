@@ -2,7 +2,6 @@ import BlogHeader from "../../components/blogHeader";
 import BlogBody from "../../components/blogBody";
 import Layout from "../../components/layout/layout";
 import Head from "../../components/head";
-import { useRouter } from "next/router";
 import React, { Fragment } from "react";
 export async function getStaticPaths() {
   const client = require("contentful").createClient({
@@ -36,17 +35,6 @@ export async function getStaticProps({ params }) {
 
   async function fetchEntries() {
     const entries = await client.getEntries({ content_type: "post" });
-    // const blogData = entries.items.filter(
-    //   ({ fields }) => fields.ids === params
-    // );
-    entries.items
-      .map((res) => res.fields)
-      .filter((item) => item.ids === params);
-    console.log(
-      entries.items
-        .map((res) => res.fields)
-        .filter((item) => item.ids === params.slug)
-    );
 
     return entries.items
       .map((res) => res.fields)
@@ -64,44 +52,28 @@ export async function getStaticProps({ params }) {
 const Post = ({ posts }) => {
   return (
     <Layout>
-      {posts.map((res) => (
-        <Fragment>
-          <Head
-            title={res?.title}
-            description={res?.subtitle}
-            keyword={res?.ids}
-            image={
-              "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
-            }
-            lang="ja"
-          />
-          <BlogHeader
-            authorName={res?.authorImg?.fields?.title}
-            authorImg={res?.authorImg?.fields?.file?.url}
-            title={res?.title}
-            contentImg={res?.image?.fields.file.url}
-            date={res?.opendAt}
-          />
-          <BlogBody content={res?.content} />
-        </Fragment>
-      ))}
-      {/* <Head
-        title={posts?.title}
-        description={posts?.subtitle}
-        keyword={posts?.ids}
-        image={
-          "https://user-images.githubusercontent.com/55383786/104997457-f519ab00-5a6c-11eb-9210-f91c35228dc7.jpg"
-        }
-        lang="ja"
-      />
-      <BlogHeader
-        authorName={posts?.authorImg?.fields?.title}
-        authorImg={posts?.authorImg?.fields?.file?.url}
-        title={posts?.title}
-        contentImg={posts?.image?.fields.file.url}
-        date={posts?.opendAt}
-      />
-      <BlogBody content={posts?.content} /> */}
+      {posts.map((res) => {
+        const url = `https://ogp-kaitoyokohamaa.vercel.app/${res.title}.png`;
+        return (
+          <Fragment>
+            <Head
+              title={res?.title}
+              description={res?.subtitle}
+              keyword={res?.ids}
+              image={url}
+              lang="ja"
+            />
+            <BlogHeader
+              authorName={res?.authorImg?.fields?.title}
+              authorImg={res?.authorImg?.fields?.file?.url}
+              title={res?.title}
+              contentImg={res?.image?.fields.file.url}
+              date={res?.opendAt}
+            />
+            <BlogBody content={res?.content} />
+          </Fragment>
+        );
+      })}
     </Layout>
   );
 };
