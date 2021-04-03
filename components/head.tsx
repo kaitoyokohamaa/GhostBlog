@@ -13,7 +13,6 @@ const HeadConfigurations = ({
   title,
   description,
   keyword,
-  image,
 }: Props): JSX.Element => {
   return (
     <>
@@ -30,14 +29,14 @@ const HeadConfigurations = ({
         <meta property="og:type" content="blog" />
         <meta property="og:image" content={image} />
         <meta property="og:site_name" content={title} />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@mj3PBy4ayqxfy14" />
         <meta name="twitter:url" content={image} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <link rel="shortcut icon" href={image} />
-        <link rel="apple-touch-icon" href={image} />
+        <link rel="shortcut icon" href={"/public/favicon.png"} />
+        <link rel="apple-touch-icon" href={"/public/favicon.png"} />
       </Head>
     </>
   );

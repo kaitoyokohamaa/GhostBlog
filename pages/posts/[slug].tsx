@@ -3,20 +3,10 @@ import BlogBody from "../../components/blogBody";
 import Layout from "../../components/layout/layout";
 import Head from "../../components/head";
 import React, { Fragment } from "react";
+import { fetchEntries, fetchBlogEntries } from "../../lib/api";
+
 export async function getStaticPaths() {
-  const client = require("contentful").createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  async function fetchEntries() {
-    const entries = await client.getEntries({ content_type: "post" });
-    // console.log(entries.items?.find(params.ids));
-    return entries.items;
-  }
-
-  const res = await fetchEntries();
-  const getPosts = await res;
+  const getPosts = await fetchEntries();
 
   const paths = getPosts?.map(({ fields }) => ({
     params: { slug: fields.ids },
@@ -28,21 +18,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  const client = require("contentful").createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  async function fetchEntries() {
-    const entries = await client.getEntries({ content_type: "post" });
-
-    return entries.items
-      .map((res) => res.fields)
-      .filter((item) => item.ids === params.slug);
-  }
-
-  const res = await fetchEntries();
-  const posts = await res;
+  const posts = await fetchBlogEntries(params.slug);
   return {
     props: {
       posts,

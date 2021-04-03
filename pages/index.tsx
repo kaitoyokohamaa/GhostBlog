@@ -1,23 +1,12 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 // import { getAllPosts } from "../lib";
 import Head from "../components/head";
 
 import { Post } from "../components/post";
 import Layout from "../components/layout/layout";
-
+import { fetchEntries } from "../lib/api";
 export async function getStaticProps() {
-  const client = require("contentful").createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  async function fetchEntries() {
-    const entries = await client.getEntries({ content_type: "post" });
-    return entries.items;
-  }
-
-  const res = await fetchEntries();
-  const posts = await res;
+  const posts = await fetchEntries();
   return {
     props: {
       posts,
