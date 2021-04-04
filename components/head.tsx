@@ -2,17 +2,17 @@ import * as React from "react";
 import Head from "next/head";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   keyword: string;
-  image: string;
-  lang: string;
+  image?: string;
 }
 
 const HeadConfigurations = ({
   title,
   description,
   keyword,
+  image,
 }: Props): JSX.Element => {
   return (
     <>
