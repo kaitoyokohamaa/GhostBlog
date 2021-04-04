@@ -30,7 +30,6 @@ const Post = ({ posts }) => {
     <Layout>
       {posts.map((res) => {
         const url = `https://ogp-kaitoyokohamaa.vercel.app/${res.title}.png`;
-
         return (
           <Fragment>
             <Head
