@@ -5,6 +5,7 @@ export default function BlogBody({ content }) {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        
         const { url, fileName } = node.data.target.fields?.file;
         return <img className="m-4" src={url} alt={fileName} />;
       },
