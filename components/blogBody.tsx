@@ -6,17 +6,7 @@ export default function BlogBody({ content }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { url, fileName } = node.data.target.fields.file;
-        return (
-          <img
-            src={url}
-            alt={fileName}
-            style={{
-              width: "100%",
-              margin: "2em 0",
-              height: "500px",
-            }}
-          />
-        );
+        return <img className="" src={url} alt={fileName} />;
       },
       [INLINES.HYPERLINK]: (node) => {
         const { uri } = node.data;
@@ -35,15 +25,21 @@ export default function BlogBody({ content }) {
       [BLOCKS.HEADING_1]: (node) => {
         const { value } = node.content[0];
         return (
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "0" }}>{value}</h2>
+          <h2 className="font-bold  my-10 text-2xl border-l-4 border-green-400 pl-2">
+            {value}
+          </h2>
         );
+      },
+      [BLOCKS.PARAGRAPH]: (node) => {
+        const { value } = node.content[0];
+        return <p className="leading-8 text-base">{value}</p>;
       },
     },
   };
 
   return (
-    <div className="w-auto m-auto py-10">
-      <div className="w-4/6 m-auto">
+    <div className="w-auto m-auto py-10 md:py-10">
+      <div className="px-2 md:w-4/6 m-auto">
         {documentToReactComponents(content, options)}
       </div>
     </div>
