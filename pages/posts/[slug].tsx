@@ -30,6 +30,7 @@ const Post = ({ posts }) => {
     <Layout>
       {posts.map((res) => {
         const url = `https://ogp-kaitoyokohamaa.vercel.app/${res.title}.png`;
+        console.log(url);
         return (
           <Fragment>
             <Head
@@ -37,7 +38,6 @@ const Post = ({ posts }) => {
               description={res?.subtitle}
               keyword={res?.ids}
               image={url}
-              lang="ja"
             />
             <BlogHeader
               authorName={res?.authorImg?.fields?.title}
