@@ -5,8 +5,8 @@ export default function BlogBody({ content }) {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { url, fileName } = node.data.target.fields.file;
-        return <img className="" src={url} alt={fileName} />;
+        const { url, fileName } = node.data.target.fields?.file;
+        return <img className="m-4" src={url} alt={fileName} />;
       },
       [INLINES.HYPERLINK]: (node) => {
         const { uri } = node.data;
@@ -14,9 +14,9 @@ export default function BlogBody({ content }) {
         return (
           <a
             target="_blank"
+            className="leading-8 text-base text-blue-700"
             rel="noreferrer noopener"
             href={uri}
-            style={{ color: "blue" }}
           >
             {value}
           </a>
@@ -30,9 +30,13 @@ export default function BlogBody({ content }) {
           </h2>
         );
       },
-      [BLOCKS.PARAGRAPH]: (node) => {
+      [BLOCKS.HEADING_3]: (node) => {
         const { value } = node.content[0];
-        return <p className="leading-8 text-base">{value}</p>;
+        return (
+          <h2 className="font-bold  my-10 text-xl bg-gray-400 border-4  p-2">
+            {value}
+          </h2>
+        );
       },
     },
   };
