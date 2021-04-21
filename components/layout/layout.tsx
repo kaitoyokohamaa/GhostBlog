@@ -6,7 +6,6 @@ export default function layout({ children }) {
     <div>
       <Header />
       <main>{children}</main>
-      <Footer />
     </div>
   );
 }
