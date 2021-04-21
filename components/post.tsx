@@ -30,7 +30,7 @@ export const Post = ({
             <div className=" font-bold text-xl text-gray-900 px-6">{title}</div>
             <p className="text-gray-800 font-serif text-base px-6 mb-5">
               {subtitle.length > 170
-                ? subtitle.substr(0, 170) + "..."
+                ? subtitle.substr(0, 100) + "..."
                 : subtitle}
             </p>
           </div>
