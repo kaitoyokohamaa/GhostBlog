@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Date from "../components/date";
+import Image from "next/image";
 type Props = {
   authorImg: string;
   date: Date;
@@ -38,8 +39,10 @@ export const Post = ({
         <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
           <div className="flex items-center justify-between">
             <Link href="/about">
-              <img
-                src={authorImg}
+              <Image
+                width="60"
+                height="500"
+                src={`http:${authorImg}`}
                 className="w-8 h-8 rounded-full mr-4 avatar"
               />
             </Link>

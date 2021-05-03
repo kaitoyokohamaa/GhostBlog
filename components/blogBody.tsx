@@ -1,11 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 export default function BlogBody({ content }) {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        
         const { url, fileName } = node.data.target.fields?.file;
         return <img className="m-4" src={url} alt={fileName} />;
       },
