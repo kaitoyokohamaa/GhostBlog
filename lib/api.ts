@@ -11,6 +11,6 @@ export async function fetchEntries() {
 export async function fetchBlogEntries(params: string) {
   const entries = await client.getEntries({ content_type: "post" });
   return entries.items
-    .map((res) => res.fields)
-    .filter((item) => item.ids === params);
+    ?.map((res) => res.fields)
+    ?.filter((item) => item.ids === params);
 }

@@ -7,7 +7,6 @@ import { fetchEntries, fetchBlogEntries } from "../../lib/api";
 
 export async function getStaticPaths() {
   const getPosts = await fetchEntries();
-
   const paths = getPosts?.map(({ fields }) => ({
     params: { slug: fields.ids },
   }));
@@ -22,8 +21,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       posts,
-      revalidate: 60,
     },
+    revalidate: 60,
   };
 }
 const Post = ({ posts }) => {
