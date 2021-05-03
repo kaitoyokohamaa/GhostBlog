@@ -7,14 +7,13 @@ import { fetchEntries, fetchBlogEntries } from "../../lib/api";
 
 export async function getStaticPaths() {
   const getPosts = await fetchEntries();
-
   const paths = getPosts?.map(({ fields }) => ({
     params: { slug: fields.ids },
   }));
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
 export async function getStaticProps({ params }) {

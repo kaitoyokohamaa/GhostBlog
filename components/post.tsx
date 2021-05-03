@@ -41,7 +41,7 @@ export const Post = ({
             <Link href="/about">
               <Image
                 width="60"
-                height="500"
+                height="60"
                 src={`http:${authorImg}`}
                 className="w-8 h-8 rounded-full mr-4 avatar"
               />
